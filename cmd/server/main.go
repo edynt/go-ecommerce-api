@@ -1,7 +1,8 @@
 package main
 
-import "fmt"
+import "github.com/edynt/go-ecommerce-api/internal/routers"
 
 func main() {
-	fmt.Println("Starting")
+	r := routers.NewRouter()
+	r.Run()
 }
