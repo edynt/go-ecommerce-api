@@ -1,8 +1,7 @@
 package main
 
-import "github.com/edynt/go-ecommerce-api/internal/routers"
+import "github.com/edynt/go-ecommerce-api/internal/initialize"
 
 func main() {
-	r := routers.NewRouter()
-	r.Run()
+	initialize.Run()
 }
