@@ -5,7 +5,14 @@ mysql:
   port: 3306
   username: root
   password: root
-  database: shopdevgo
+  database: testbookingpiano
   maxIdleConns: 10 # max pull connect
   maxOpenConns: 100 #dat so luong ket noi toi da co the
   connMaxLifetime: 3600 #thoi gian ket noi toi da
+logger:
+  log_level: debug
+  file_log_name: "./storage/logs/dev.001.log"
+  max_size: 500
+  max_backups: 3
+  max_age: 28
+  compress: true
