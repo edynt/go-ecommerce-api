@@ -5,7 +5,7 @@ mysql:
   port: 3306
   username: root
   password: root
-  database: testbookingpiano
+  database: shopdev
   maxIdleConns: 10 # max pull connect
   maxOpenConns: 100 #dat so luong ket noi toi da co the
   connMaxLifetime: 3600 #thoi gian ket noi toi da
@@ -16,3 +16,8 @@ logger:
   max_backups: 3
   max_age: 28
   compress: true
+redis:
+  host: 127.0.0.1
+  port: 6379
+  password:
+  database: 0

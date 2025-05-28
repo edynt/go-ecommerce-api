@@ -3,6 +3,7 @@ package setting
 type Config struct {
 	MySQL  MySQLSetting  `mapstructure:"mysql"`
 	Logger LoggerSetting `mapstructure:"logger"`
+	Redis  RedisSetting  `mapstructure:"redis"`
 }
 
 type MySQLSetting struct {
@@ -10,7 +11,7 @@ type MySQLSetting struct {
 	Port            int    `mapstructure:"port"`
 	Username        string `mapstructure:"username"`
 	Password        string `mapstructure:"password"`
-	Dbname          string `mapstructure:"dbname"`
+	Database        string `mapstructure:"database"`
 	MaxOpenConns    int    `mapstructure:"maxOpenConns"`
 	MaxIdleConns    int    `mapstructure:"maxIdleConns"`
 	ConnMaxLifeTime int    `mapstructure:"]connMaxLifeTime"`
@@ -23,4 +24,11 @@ type LoggerSetting struct {
 	Max_backups   int    `mapstructure:"max_backups"`
 	Max_age       int    `mapstructure:"max_age"`
 	Compress      bool   `mapstructure:"compress"`
+}
+
+type RedisSetting struct {
+	Host     string `mapstructure:"host"`
+	Port     int    `mapstructure:"port"`
+	Password string `mapstructure:"password"`
+	Database int    `mapstructure:"database"`
 }
