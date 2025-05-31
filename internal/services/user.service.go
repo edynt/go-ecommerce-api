@@ -1,17 +1,30 @@
 package services
 
-import "github.com/edynt/go-ecommerce-api/internal/repo"
+import (
+	"github.com/edynt/go-ecommerce-api/internal/repo"
+	"github.com/edynt/go-ecommerce-api/response"
+)
 
-type UserService struct {
-	userRepo *repo.UserRepo
+type IUserService interface {
+	Register(email string, purpose string) int
 }
 
-func NewUserService() *UserService {
-	return &UserService{
-		userRepo: repo.NewUserRepo(),
+type userService struct {
+	userRepo repo.IUuserRepository
+}
+
+func NewUserService(userRepo repo.IUuserRepository) IUserService {
+	return &userService{
+		userRepo: userRepo,
 	}
 }
 
-func (us *UserService) GetInfoUser() string {
-	return us.userRepo.GetInfoUser()
+// Register implements IUserService.
+func (us *userService) Register(email string, purpose string) int {
+	// 1. check email exists
+	if us.userRepo.GetUserByEmail(email) {
+		return response.ErrCodeUserHasExists
+
+	}
+	return 0
 }
