@@ -13,7 +13,7 @@ func (pr *UserRouter) InitAdminRouter(Router *gin.RouterGroup) {
 		adminRouterPublic.POST("/change-password")
 	}
 
-	adminRouterPrivate := Router.Group("/admin/user")
+	adminRouterPrivate := Router.Group("/admin/manager-user")
 	// adminRouterPrivate.Use(Limiter())
 	// adminRouterPrivate.Use(Authentication())
 	// adminRouterPrivate.Use(Permission())
