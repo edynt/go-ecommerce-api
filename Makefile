@@ -2,7 +2,7 @@
 APP_NAME  = server
 
 dev:
-	go run ./cmd/$(APP_NAME)
+	air
 
 run: 
 	docker-compose up -d && go run ./cmd/$(APP_NAME)
