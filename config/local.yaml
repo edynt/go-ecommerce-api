@@ -6,7 +6,7 @@ mysql:
   port: 3306
   username: root
   password: root
-  database: shopdev
+  database: shopdevgo
   maxIdleConns: 10 # max pull connect
   maxOpenConns: 100 #dat so luong ket noi toi da co the
   connMaxLifetime: 3600 #thoi gian ket noi toi da
